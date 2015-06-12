@@ -40,24 +40,45 @@
                        </div>
                        
                   </div>           
-          </footer>
+          </footer>		  
           <!--/ footer -->
+		  
           <div class="bg-white">                        
                <div class="container t-pad20 b-pad10">
                        
-                    <div class="col-md-6 t-pad10">
-                         <p class="bold">© 2014 Blend Web Agency. All rights reserved.</p>
+                    <div class="col-md-6 t-pad10">					
+						<?php if($data['textarea_copyright'] != "") { ?>
+							<?php echo $data['textarea_copyright']; ?>
+						<?php } else { ?>
+							<p class="bold">Copyright &copy;  <?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
+						<?php } ?>
                     </div>
+					
                     <div class="col-md-6 text-right">
+					<?php if($data['check_socialfooter'] == true) { ?>
                          <div class="social-icons">
                               <ul>
-                                  <li><a href="#" class="twitter-alt" title="Twitter" data-rel="tooltip" data-placement="top"><i class="icon-twitter"></i></a></li>
-                                  <li><a href="#" class="facebook-alt" title="Facebook" data-rel="tooltip" data-placement="top"><i class="icon-facebook"></i></a></li> 
-                                  <li><a href="#" class="google-alt" title="Google Plus" data-rel="tooltip" data-placement="top"><i class="icon-gplus"></i></a></li>
-                                  <li><a href="#" class="linkedin-alt" title="Linkedin" data-rel="tooltip" data-placement="top"><i class="icon-linkedin"></i></a></li>
-                                  <li><a href="#" class="dribbble-alt" title="Dribbble" data-rel="tooltip" data-placement="top"><i class="icon-dribbble"></i></a></li>
+                                  	<?php if($data['social_facebook'] != "") { ?>										
+										<li><a href="<?php echo $data['social_facebook']; ?>" class="facebook-alt" title="<?php _e( 'Facebook', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-facebook"></i></a></li> 
+									<?php } ?>
+									<?php if($data['social_twitter'] != "") { ?>
+										<li><a href="<?php echo $data['social_twitter']; ?>" class="twitter-alt" title="<?php _e( 'Twitter', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-twitter"></i></a></li>
+									<?php } ?>
+									<?php if($data['social_linkedin'] != "") { ?>
+										<li><a href="<?php echo $data['social_linkedin']; ?>" class="linkedin-alt" title="<?php _e( 'LinkedIn', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-linkedin"></i></a></li>
+									<?php } ?>
+									<?php if($data['social_google_plus'] != "") { ?>
+										<li><a href="<?php echo $data['social_google_plus']; ?>" class="google-alt" title="<?php _e( 'Google Plus', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-gplus"></i></a></li>
+									<?php } ?>
+									<?php if($data['social_dribble'] != "") { ?>										
+										<li><a href="<?php echo $data['social_dribble']; ?>" class="dribbble-alt" title="<?php _e( 'Dribble', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-dribbble"></i></a></li>
+									<?php } ?>
+									<?php if($data['social_rss'] == true) { ?>
+										<li><a href="<?php bloginfo('rss2_url'); ?>" class="rss-alt" title="<?php _e( 'RSS', 'wash' ) ?>" data-rel="tooltip" data-placement="top"><i class="icon-rss"></i></a></li>
+									<?php } ?>
                               </ul>
                          </div>
+					 <?php } ?>
                     </div>
                        
                </div>      
@@ -104,6 +125,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/gizmo.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 
+<!-------- Analytics Code ------->
+<?php if($data['textarea_trackingcode'] != '') { echo $data['textarea_trackingcode']; } ?>
 <?php wp_footer(); ?>
 	
 	<!-- Don't forget analytics -->
