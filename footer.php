@@ -101,34 +101,10 @@
              </div>
 		</div>
 		<!--/ search -->
-        
-<!-- JS Files
-================================================== -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.themepunch.plugins.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.themepunch.revolution.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.inview.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/isotope.pkgd.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/imagesloaded.pkgd.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easytabs.min.js"></script>	
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easytabs.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.sticky.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.zflickrfeed.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/twitter-bootstrap-hover-dropdown.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easy-pie-chart.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/classie.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/search.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/gizmo.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+      	
 
-<!-------- Analytics Code ------->
-<?php if($data['textarea_trackingcode'] != '') { echo $data['textarea_trackingcode']; } ?>
 <?php wp_footer(); ?>
-	
-	<!-- Don't forget analytics -->
+	<!-- Don't forget analytics -->  
+	<?php if($data['textarea_trackingcode'] != '') { echo $data['textarea_trackingcode']; } ?>
 </body>
 </html>
